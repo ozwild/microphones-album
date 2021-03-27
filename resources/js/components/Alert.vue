@@ -1,0 +1,27 @@
+<template>
+    <div class="bd-callout bd-callout-info">
+        <h5 v-if="title">{{ title }}</h5>
+        <slot></slot>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'alert',
+    props: ['title']
+}
+</script>
+
+<style>
+.bd-callout {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #e9ecef;
+    border-left-width: .25rem;
+    border-radius: .25rem;
+}
+.bd-callout-info {
+    border-left-color: #5bc0de;
+}
+</style>
