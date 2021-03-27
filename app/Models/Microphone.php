@@ -29,7 +29,7 @@ class Microphone extends Model
 
     public function getPictureAttribute()
     {
-        return "/pictures/{$this->id}_microphone.webp";
+        return "https://ozwild-microphones-album.s3.us-east-2.amazonaws.com/{$this->id}_microphone.webp";
     }
 
     public function brand(): BelongsTo
