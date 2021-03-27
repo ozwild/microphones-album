@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Microphone;
 use App\Models\MicrophoneType;
 use App\Models\PolarPattern;
@@ -16,6 +17,12 @@ class MicrophoneController extends Controller
         $microphones = Microphone::all();
         $microphones->load(['uses', 'type', 'patterns', 'brand']);
         return response()->json($microphones);
+    }
+
+    public function apiGetBrands(): JsonResponse
+    {
+        $brands = Brand::all();
+        return response()->json($brands);
     }
 
     public function apiGetTypes(): JsonResponse

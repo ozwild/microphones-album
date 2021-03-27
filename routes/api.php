@@ -21,5 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('microphones', [MicrophoneController::class, 'apiGetAll']);
+
+Route::get('brands', [MicrophoneController::class, 'apiGetBrands']);
 Route::get('types', [MicrophoneController::class, 'apiGetTypes']);
 Route::get('patterns', [MicrophoneController::class, 'apiGetPolarPatterns']);

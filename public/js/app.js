@@ -2077,6 +2077,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'microphone-display',
@@ -2168,6 +2174,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2179,6 +2196,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       loading: true,
+      brands: [],
+      brand: null,
       patterns: [],
       pattern: null,
       types: [],
@@ -2190,6 +2209,40 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.get();
   },
+  computed: {
+    filteredMicrophones: function filteredMicrophones() {
+      var microphones = this.microphones;
+
+      if (this.pattern) {
+        var id = this.pattern.id;
+        microphones = microphones.filter(function (microphone) {
+          return microphone.patterns.filter(function (p) {
+            return p.id === id;
+          }).length > 0;
+        });
+      }
+
+      if (this.type) {
+        var _id = this.type.id;
+        microphones = microphones.filter(function (m) {
+          return m.type_id === _id;
+        });
+      }
+
+      if (this.brand) {
+        var _id2 = this.brand.id;
+        microphones = microphones.filter(function (m) {
+          return m.brand_id === _id2;
+        });
+      }
+
+      if (microphones.length === 0) {
+        this.microphone = null;
+      }
+
+      return microphones;
+    }
+  },
   methods: {
     get: function get() {
       var _this = this;
@@ -2198,11 +2251,14 @@ __webpack_require__.r(__webpack_exports__);
       Promise.all([axios.get('/api/microphones').then(function (_ref) {
         var microphones = _ref.data;
         _this.microphones = microphones;
-      }), axios.get('/api/types').then(function (_ref2) {
-        var types = _ref2.data;
+      }), axios.get('/api/brands').then(function (_ref2) {
+        var brands = _ref2.data;
+        _this.brands = brands;
+      }), axios.get('/api/types').then(function (_ref3) {
+        var types = _ref3.data;
         _this.types = types;
-      }), axios.get('/api/patterns').then(function (_ref3) {
-        var patterns = _ref3.data;
+      }), axios.get('/api/patterns').then(function (_ref4) {
+        var patterns = _ref4.data;
         _this.patterns = patterns;
       })]).then(function () {
         _this.loading = false;
@@ -6832,7 +6888,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.patterns-list {\n    font-size: 1.1em;\n}\n.usage-list {\n    font-size: 1.25em;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.patterns-list {\n    font-size: 1.1em;\n}\n.usage-list {\n    font-size: 1.25em;\n}\n.picture-display {\n    padding: 50%;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center center;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39176,10 +39232,13 @@ var render = function() {
               "div",
               { staticClass: "col-12 col-md-7 mb-4" },
               [
-                _c("card", {
-                  staticClass: "shadow",
-                  attrs: { image: _vm.microphone.picture }
-                })
+                _c("card", { staticClass: "shadow" }, [
+                  _c("div", {
+                    staticClass: "picture-display",
+                    style:
+                      "background-image: url('" + _vm.microphone.picture + "');"
+                  })
+                ])
               ],
               1
             ),
@@ -39218,6 +39277,7 @@ var render = function() {
                       _vm._l(_vm.microphone.uses, function(use) {
                         return _c(
                           "li",
+                          { key: "microphone_uses_" + use.id },
                           [
                             _c("badge", { staticClass: "badge-light" }, [
                               _vm._v(_vm._s(use.usage))
@@ -39241,8 +39301,16 @@ var render = function() {
                       _vm._l(_vm.microphone.patterns, function(pattern) {
                         return _c(
                           "badge",
-                          { staticClass: "badge-primary mr-1" },
-                          [_vm._v(_vm._s(pattern.pattern))]
+                          {
+                            key: "microphone_patters_" + pattern.id,
+                            staticClass: "badge-primary mr-1"
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(pattern.pattern) +
+                                "\n                        "
+                            )
+                          ]
                         )
                       }),
                       1
@@ -39327,7 +39395,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "col-12 col-lg-4" },
+              { staticClass: "col-12 col-lg-3" },
               [
                 _c("card", { staticClass: "mb-5" }, [
                   _c("h5", [_vm._v("Filtros:")]),
@@ -39335,7 +39403,36 @@ var render = function() {
                   _c("div", { staticClass: "row" }, [
                     _c(
                       "div",
-                      { staticClass: "col-12 col-md-6 col-lg-12" },
+                      { staticClass: "col-12 col-md-6 col-lg-12 mb-3" },
+                      [
+                        _c("label", { attrs: { for: "brand_filter" } }, [
+                          _vm._v("Marca:")
+                        ]),
+                        _vm._v(" "),
+                        _c("v-select", {
+                          attrs: {
+                            id: "brand_filter",
+                            options: _vm.brands,
+                            getOptionLabel: function(option) {
+                              return option.brand
+                            },
+                            placeholder: "Seleccione una Marca"
+                          },
+                          model: {
+                            value: _vm.brand,
+                            callback: function($$v) {
+                              _vm.brand = $$v
+                            },
+                            expression: "brand"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-12 col-md-6 col-lg-12  mb-3" },
                       [
                         _c("label", { attrs: { for: "type_filter" } }, [
                           _vm._v("Tipos:")
@@ -39364,7 +39461,7 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "div",
-                      { staticClass: "col-12 col-md-6 col-lg-12" },
+                      { staticClass: "col-12 col-md-6 col-lg-12  mb-3" },
                       [
                         _c("label", { attrs: { for: "pattern_filter" } }, [
                           _vm._v("Patrones:")
@@ -39396,23 +39493,44 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "row" }, [
                     _c("div", { staticClass: "col-12" }, [
-                      _c("ul", { attrs: { id: "array-rendering" } }, [
-                        _c(
-                          "li",
-                          _vm._l(_vm.microphones, function(mic) {
-                            return _c("button", {
-                              staticClass: "btn btn-link",
-                              domProps: { innerHTML: _vm._s(mic.model) },
-                              on: {
-                                click: function($event) {
-                                  return _vm.selectMicrophone(mic)
-                                }
+                      _c(
+                        "table",
+                        {
+                          staticClass: "table table-hover",
+                          staticStyle: { "max-height": "10em" }
+                        },
+                        [
+                          _c(
+                            "tbody",
+                            {
+                              staticStyle: {
+                                "max-height": "10em",
+                                "overflow-y": "auto"
                               }
-                            })
-                          }),
-                          0
-                        )
-                      ])
+                            },
+                            _vm._l(_vm.filteredMicrophones, function(
+                              mic,
+                              index
+                            ) {
+                              return _c("tr", { key: "results_" + mic.id }, [
+                                _c("td", {
+                                  domProps: { innerHTML: _vm._s(index + 1) }
+                                }),
+                                _vm._v(" "),
+                                _c("td", {
+                                  domProps: { innerHTML: _vm._s(mic.model) },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.selectMicrophone(mic)
+                                    }
+                                  }
+                                })
+                              ])
+                            }),
+                            0
+                          )
+                        ]
+                      )
                     ])
                   ])
                 ])
@@ -39422,7 +39540,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "col-12 col-lg-8" },
+              { staticClass: "col-12 col-lg-9" },
               [
                 !_vm.microphone
                   ? _c(

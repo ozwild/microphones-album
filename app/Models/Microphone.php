@@ -27,9 +27,9 @@ class Microphone extends Model
         return $this->price * 7.73;
     }
 
-    public function getPictureAttribute()
+    public function getPictureAttribute(): string
     {
-        return "https://ozwild-microphones-album.s3.us-east-2.amazonaws.com/{$this->id}_microphone.webp";
+        return "https://ozwild-microphones-album.s3.us-east-2.amazonaws.com/{$this->id}.webp";
     }
 
     public function brand(): BelongsTo

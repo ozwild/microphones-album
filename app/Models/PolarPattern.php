@@ -15,6 +15,8 @@ class PolarPattern extends Model
     const HIPERCARDIOIDE = 3;
     const OMNIDIRECCIONAL = 4;
     const BIDIRECCIONAL = 5;
+    const CARDIOIDE_AMPLIO = 6;
+    const MIXED = 7;
 
     protected $fillable = ['pattern'];
 

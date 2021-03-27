@@ -30,6 +30,12 @@ class PolarPatternSeeder extends Seeder
             [
                 'pattern' => 'BIDIRECCIONAL',
             ],
+            [
+                'pattern' => 'CARDIOIDE AMPLIO',
+            ],
+            [
+                'pattern' => 'Hibrido(s)',
+            ],
         ]);
     }
 }

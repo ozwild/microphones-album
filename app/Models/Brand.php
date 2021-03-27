@@ -15,6 +15,14 @@ class Brand extends Model
     const ELECTROVOICE = 3;
     const BEHRINGER = 4;
     const RODE = 5;
+    const SAMSON = 6;
+    const TELEFUNKEN = 7;
+    const BLUE = 8;
+    const TOWNSEND = 9;
+    const AKG = 10;
+    const WARM_AUDIO = 11;
+    const NEUMANN = 12;
+    const MANLEY = 13;
 
     public $timestamps = FALSE;
 

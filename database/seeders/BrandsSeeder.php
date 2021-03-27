@@ -30,6 +30,30 @@ class BrandsSeeder extends Seeder
             [
                 'brand' => 'Rode',
             ],
+            [
+                'brand' => 'Samson',
+            ],
+            [
+                'brand' => 'Telefunken',
+            ],
+            [
+                'brand' => 'Blue',
+            ],
+            [
+                'brand' => 'Townsend',
+            ],
+            [
+                'brand' => 'AKG',
+            ],
+            [
+                'brand' => 'Warm Audio',
+            ],
+            [
+                'brand' => 'Neumann',
+            ],
+            [
+                'brand' => 'Manley',
+            ],
         ]);
     }
 }

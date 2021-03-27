@@ -6,7 +6,8 @@
             <div class="row">
 
                 <div class="col-12 col-md-7 mb-4">
-                    <card :image="microphone.picture" class="shadow">
+                    <card class="shadow">
+                        <div class="picture-display" :style="`background-image: url('${microphone.picture}');`"></div>
                     </card>
                 </div>
 
@@ -26,14 +27,19 @@
                     </data-pair>
                     <data-pair label="Usos" class="mb-2">
                         <ul class="usage-list">
-                            <li v-for="use in microphone.uses">
+                            <li v-for="use in microphone.uses" :key="`microphone_uses_${use.id}`">
                                 <badge class="badge-light">{{ use.usage }}</badge>
                             </li>
                         </ul>
                     </data-pair>
                     <data-pair label="Patron(es)" class="mb-2">
                         <div class="d-flex flex-wrap patterns-list">
-                            <badge v-for="pattern in microphone.patterns" class="badge-primary mr-1">{{ pattern.pattern }}</badge>
+                            <badge v-for="pattern in microphone.patterns"
+                                   :key="`microphone_patters_${pattern.id}`"
+                                   class="badge-primary mr-1">{{
+                                    pattern.pattern
+                                }}
+                            </badge>
                         </div>
                     </data-pair>
                     <data-pair label="Precio" class="mb-2 text-right">
@@ -71,5 +77,12 @@ export default {
 
 .usage-list {
     font-size: 1.25em;
+}
+
+.picture-display {
+    padding: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 </style>
