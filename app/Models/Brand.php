@@ -36,6 +36,8 @@ class Brand extends Model
     const SARAMONIC = 24;
     const ACACIA = 25;
     const COUNTRYMAN = 26;
+    const AUDIX = 27;
+    const AVANTONE = 28;
 
     public $timestamps = FALSE;
 

@@ -1636,5 +1636,263 @@ class MicrophoneSeeder extends Seeder
         ]);
         $microphone->save();
 
+
+        // DRUM KICK
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::AUDIX);
+        $microphone->model = "Audix D6";
+        $microphone->price = 199;
+        $microphone->frequency_response = "30Hz-15kHz";
+        $microphone->type()->associate(MicrophoneType::DINAMICO);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "KICK"
+            ],
+            [
+                "usage" => "STAGE"
+            ],
+            [
+                "usage" => "STUDIO"
+            ],
+            [
+                "usage" => "CUALQUIER POSICION"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::AVANTONE);
+        $microphone->model = "Avantone Pro MONDO";
+        $microphone->price = 129.99;
+        $microphone->frequency_response = "20Hz-15kHz";
+        $microphone->type()->associate(MicrophoneType::DINAMICO);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "KICK"
+            ],
+            [
+                "usage" => "SHOCKMOUNT"
+            ],
+            [
+                "usage" => "STAGE"
+            ],
+            [
+                "usage" => "STUDIO"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::AUDIO_TECHNICA);
+        $microphone->model = "Audio-Technica ATM250";
+        $microphone->price = 199;
+        $microphone->frequency_response = "40Hz-15kHz";
+        $microphone->type()->associate(MicrophoneType::DINAMICO);
+        $microphone->patterns()->sync([PolarPattern::HIPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "KICK"
+            ],
+            [
+                "usage" => "STAGE"
+            ],
+            [
+                "usage" => "STUDIO"
+            ],
+            [
+                "usage" => "CORROSION RESISTANT"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::TELEFUNKEN);
+        $microphone->model = "Telefunken M82";
+        $microphone->price = 399;
+        $microphone->frequency_response = "25Hz-18kHz";
+        $microphone->type()->associate(MicrophoneType::DINAMICO);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "KICK"
+            ],
+            [
+                "usage" => "DEEP VOCALS"
+            ],
+            [
+                "usage" => "STAGE"
+            ],
+            [
+                "usage" => "STUDIO"
+            ],
+            [
+                "usage" => "HIGH BOOST SWITCH"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::AKG);
+        $microphone->model = "AKG D112 MKII";
+        $microphone->price = 199;
+        $microphone->frequency_response = "20Hz-17kHz";
+        $microphone->type()->associate(MicrophoneType::DINAMICO);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "KICK"
+            ],
+            [
+                "usage" => "BASS"
+            ],
+            [
+                "usage" => "STAGE"
+            ],
+            [
+                "usage" => "STUDIO"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::SHURE);
+        $microphone->model = "Shure Beta 52A";
+        $microphone->price = 189;
+        $microphone->frequency_response = "20Hz-10kHz";
+        $microphone->type()->associate(MicrophoneType::DINAMICO);
+        $microphone->patterns()->sync([PolarPattern::SUPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "KICK"
+            ],
+            [
+                "usage" => "BASS"
+            ],
+            [
+                "usage" => "STAGE"
+            ],
+            [
+                "usage" => "STUDIO"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::AKG);
+        $microphone->model = "AKG D12 VR";
+        $microphone->price = 499;
+        $microphone->frequency_response = "17Hz-17kHz";
+        $microphone->type()->associate(MicrophoneType::DINAMICO);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "KICK"
+            ],
+            [
+                "usage" => "STAGE"
+            ],
+            [
+                "usage" => "STUDIO"
+            ],
+            [
+                "usage" => "FILTER SWITCHES"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::SENNHEISER);
+        $microphone->model = "Sennheiser e 602-II";
+        $microphone->price = 149.95;
+        $microphone->frequency_response = "20Hz-16kHz";
+        $microphone->type()->associate(MicrophoneType::DINAMICO);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "KICK"
+            ],
+            [
+                "usage" => "INSTRUMENTOS"
+            ],
+            [
+                "usage" => "STAGE"
+            ],
+            [
+                "usage" => "STUDIO"
+            ],
+            [
+                "usage" => "FILTER SWITCHES"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::BEYERDYNAMIC);
+        $microphone->model = "Beyerdynamic TG D70";
+        $microphone->price = 249;
+        $microphone->frequency_response = "20Hz-14kHz";
+        $microphone->type()->associate(MicrophoneType::DINAMICO);
+        $microphone->patterns()->sync([PolarPattern::HIPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "KICK"
+            ],
+            [
+                "usage" => "INSTRUMENTOS"
+            ],
+            [
+                "usage" => "STAGE"
+            ],
+            [
+                "usage" => "STUDIO"
+            ],
+            [
+                "usage" => "PUNCHY"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::ELECTROVOICE);
+        $microphone->model = "Electro-Voice RE320";
+        $microphone->price = 249;
+        $microphone->frequency_response = "30Hz-18kHz";
+        $microphone->type()->associate(MicrophoneType::DINAMICO);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "KICK"
+            ],
+            [
+                "usage" => "INSTRUMENTOS"
+            ],
+            [
+                "usage" => "STAGE"
+            ],
+            [
+                "usage" => "STUDIO"
+            ],
+            [
+                "usage" => "HUMBUCKING"
+            ],
+            [
+                "usage" => "KICK/GENERAL SWITCH"
+            ],
+        ]);
+        $microphone->save();
+
     }
 }

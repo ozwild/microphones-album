@@ -93,6 +93,12 @@ class BrandsSeeder extends Seeder
             [
                 'brand' => 'Countryman',
             ],
+            [
+                'brand' => 'Audix',
+            ],
+            [
+                'brand' => 'Avantone',
+            ],
         ]);
     }
 }
