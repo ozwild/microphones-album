@@ -684,7 +684,7 @@ class MicrophoneSeeder extends Seeder
 
 
         $microphone = Microphone::create();
-        $microphone->brand()->associate(Brand::NEUMANN);
+        $microphone->brand()->associate(Brand::ASTON_MICROPHONES);
         $microphone->model = "Aston Microphones Origin";
         $microphone->price = 299;
         $microphone->frequency_response = "20Hz-20kHz";
@@ -927,5 +927,230 @@ class MicrophoneSeeder extends Seeder
             ],
         ]);
         $microphone->save();
+
+
+        // CINTA
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::ROYER);
+        $microphone->model = "Royer R-10";
+        $microphone->price = 499;
+        $microphone->frequency_response = "30Hz-15kHz";
+        $microphone->type()->associate(MicrophoneType::CINTA);
+        $microphone->patterns()->sync([PolarPattern::BIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "CLOSE UP"
+            ],
+            [
+                "usage" => "STUDIO VOCALS"
+            ],
+            [
+                "usage" => "INSTRUMENTOS"
+            ],
+            [
+                "usage" => "DUETOS"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::BEYERDYNAMIC);
+        $microphone->model = "Beyerdynamic M 160";
+        $microphone->price = 699;
+        $microphone->frequency_response = "40Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::CINTA);
+        $microphone->patterns()->sync([PolarPattern::HIPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "CUERDAS"
+            ],
+            [
+                "usage" => "INSTRUMENTOS"
+            ],
+            [
+                "usage" => "CINE & TELEVISION"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::AEA);
+        $microphone->model = "AEA R88A";
+        $microphone->price = 2399;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::CINTA);
+        $microphone->patterns()->sync([PolarPattern::BIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "CUERDAS"
+            ],
+            [
+                "usage" => "PIANO"
+            ],
+            [
+                "usage" => "VOCES DISCRETAS"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::AEA);
+        $microphone->model = "AEA A440 ";
+        $microphone->price = 5799;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::CINTA);
+        $microphone->patterns()->sync([PolarPattern::BIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "136dB SPL"
+            ],
+            [
+                "usage" => "ORQUESTAL"
+            ],
+            [
+                "usage" => "INSTRUMENTOS"
+            ],
+            [
+                "usage" => "VOCALS"
+            ],
+        ]);
+        $microphone->save();
+
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::SHURE);
+        $microphone->model = "Shure KSM313/NE";
+        $microphone->price = 1295;
+        $microphone->frequency_response = "30Hz-15kHz";
+        $microphone->type()->associate(MicrophoneType::CINTA);
+        $microphone->patterns()->sync([PolarPattern::BIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "AMPLIFICADORES"
+            ],
+            [
+                "usage" => "146dB SPL"
+            ],
+            [
+                "usage" => "VOCALS"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::GOLDEN_AGE);
+        $microphone->model = "Golden Age Project R2 MKII";
+        $microphone->price = 169.99;
+        $microphone->frequency_response = "30Hz-18kHz";
+        $microphone->type()->associate(MicrophoneType::CINTA);
+        $microphone->patterns()->sync([PolarPattern::BIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "AMPLIFICADORES"
+            ],
+            [
+                "usage" => "137dB SPL"
+            ],
+            [
+                "usage" => "VOCALS"
+            ],
+        ]);
+        $microphone->save();
+
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::RODE);
+        $microphone->model = "Rode NTR";
+        $microphone->price = 799;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::CINTA);
+        $microphone->patterns()->sync([PolarPattern::BIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "AMPLIFICADORES"
+            ],
+            [
+                "usage" => "METALES"
+            ],
+            [
+                "usage" => "VOCALS"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::CLOUD);
+        $microphone->model = "Cloud Microphones 44-A";
+        $microphone->price = 1499;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::CINTA);
+        $microphone->patterns()->sync([PolarPattern::BIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "VOCAL/MUSIC SWITCH"
+            ],
+            [
+                "usage" => "INSTRUMENTOS"
+            ],
+            [
+                "usage" => "VOCALS"
+            ],
+        ]);
+        $microphone->save();
+
+
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::ROYER);
+        $microphone->model = "Royer R-122V";
+        $microphone->price = 3095;
+        $microphone->frequency_response = "30Hz-15kHz";
+        $microphone->type()->associate(MicrophoneType::CINTA);
+        $microphone->patterns()->sync([PolarPattern::BIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "VOCALS"
+            ],
+            [
+                "usage" => "AMPLIFICADORES"
+            ],
+            [
+                "usage" => "CUERDAS"
+            ],
+        ]);
+        $microphone->save();
+
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::GOLDEN_AGE);
+        $microphone->model = "Golden Age Project R1 ST";
+        $microphone->price = 599;
+        $microphone->frequency_response = "30Hz-18kHz";
+        $microphone->type()->associate(MicrophoneType::CINTA);
+        $microphone->patterns()->sync([PolarPattern::BIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "VOCALS"
+            ],
+            [
+                "usage" => "OVERHEAD"
+            ],
+            [
+                "usage" => "BLUMLEIN"
+            ],
+        ]);
+        $microphone->save();
+
+
     }
 }

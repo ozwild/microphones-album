@@ -60,6 +60,21 @@ class BrandsSeeder extends Seeder
             [
                 'brand' => 'Earthworks',
             ],
+            [
+                'brand' => 'Royer',
+            ],
+            [
+                'brand' => 'Beyerdynamic',
+            ],
+            [
+                'brand' => 'AEA',
+            ],
+            [
+                'brand' => 'Golden Age Project',
+            ],
+            [
+                'brand' => 'Cloud',
+            ],
         ]);
     }
 }

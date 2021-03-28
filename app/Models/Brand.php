@@ -23,8 +23,13 @@ class Brand extends Model
     const WARM_AUDIO = 11;
     const NEUMANN = 12;
     const MANLEY = 13;
-    const ASTON_MICROPHONES = 13;
-    const EARTHWORKS = 13;
+    const ASTON_MICROPHONES = 14;
+    const EARTHWORKS = 15;
+    const ROYER = 16;
+    const BEYERDYNAMIC = 17;
+    const AEA = 18;
+    const GOLDEN_AGE = 19;
+    const CLOUD = 20;
 
     public $timestamps = FALSE;
 
