@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row">
 
-                <div class="col-12 col-md-7 mb-4">
+                <div class="col-12 col-md-4 mb-4">
                     <card class="shadow">
                         <div class="picture-display" :style="`background-image: url('${microphone.picture}');`"></div>
                     </card>
                 </div>
 
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-4">
                     <h2>{{ microphone.model }}</h2>
                     <data-pair label="Tipo"
                                :value="microphone.brand.brand"
@@ -32,6 +32,10 @@
                             </li>
                         </ul>
                     </data-pair>
+
+                </div>
+
+                <div class="col-12 col-md-4">
                     <data-pair label="Patron(es)" class="mb-2">
                         <div class="d-flex flex-wrap patterns-list">
                             <badge v-for="pattern in microphone.patterns"
@@ -42,7 +46,7 @@
                             </badge>
                         </div>
                     </data-pair>
-                    <data-pair label="Precio" class="mb-2 text-right">
+                    <data-pair label="Precio" class="mb-2">
                         <h3>{{
                                 (microphone.price_in_quetzales).toLocaleString('en-US', {
                                     style: 'currency', currency:
@@ -50,7 +54,6 @@
                                 })
                             }}</h3>
                     </data-pair>
-
                 </div>
 
             </div>

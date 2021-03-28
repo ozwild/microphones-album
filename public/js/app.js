@@ -1893,6 +1893,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'app-header'
 });
@@ -2083,6 +2109,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'microphone-display',
@@ -2108,10 +2137,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _MicrophoneDisplay__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MicrophoneDisplay */ "./resources/js/components/MicrophoneDisplay.vue");
 /* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
 /* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_1__);
-//
-//
-//
-//
 //
 //
 //
@@ -2211,6 +2236,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     filteredMicrophones: function filteredMicrophones() {
+      var _this = this;
+
       var microphones = this.microphones;
 
       if (this.pattern) {
@@ -2236,8 +2263,16 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
 
-      if (microphones.length === 0) {
-        this.microphone = null;
+      if (this.microphone) {
+        if (microphones.length === 0) {
+          this.microphone = null;
+        }
+
+        if (microphones.filter(function (m) {
+          return m.id === _this.microphone.id;
+        }).length === 0) {
+          this.microphone = null;
+        }
       }
 
       return microphones;
@@ -2245,23 +2280,23 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     get: function get() {
-      var _this = this;
+      var _this2 = this;
 
       this.loading = true;
       Promise.all([axios.get('/api/microphones').then(function (_ref) {
         var microphones = _ref.data;
-        _this.microphones = microphones;
+        _this2.microphones = microphones;
       }), axios.get('/api/brands').then(function (_ref2) {
         var brands = _ref2.data;
-        _this.brands = brands;
+        _this2.brands = brands;
       }), axios.get('/api/types').then(function (_ref3) {
         var types = _ref3.data;
-        _this.types = types;
+        _this2.types = types;
       }), axios.get('/api/patterns').then(function (_ref4) {
         var patterns = _ref4.data;
-        _this.patterns = patterns;
+        _this2.patterns = patterns;
       })]).then(function () {
-        _this.loading = false;
+        _this2.loading = false;
       });
     },
     selectMicrophone: function selectMicrophone(microphone) {
@@ -39029,25 +39064,55 @@ var render = function() {
     _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-12" }, [
-          _c("div", { staticClass: "d-flex" }, [
-            _c("img", {
-              staticClass: "img-fluid",
-              staticStyle: { height: "5em" },
-              attrs: { src: "/img/profile/universidad-logo.png" }
-            }),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-12 col-md-5" }, [
+              _c("div", { staticClass: "d-flex" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-12 col-md-6" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-12 col-md-6" }, [
+                        _c("img", {
+                          staticClass: "img-fluid",
+                          staticStyle: { "margin-top": "6px" },
+                          attrs: { src: "/img/profile/universidad-logo.png" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-12 col-md-6" }, [
+                        _c("img", {
+                          staticClass: "img-fluid",
+                          staticStyle: { height: "5em", padding: "8px 4px" },
+                          attrs: { src: "/img/profile/esa-logo.png" }
+                        })
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-12 col-md-6" }, [
+                    _c(
+                      "div",
+                      { staticClass: "d-flex flex-column header-data" },
+                      [
+                        _c("div", [_vm._v("Universidad Galileo")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("Microfonia")]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v("Oscar Palencia - 08002504")])
+                      ]
+                    )
+                  ])
+                ])
+              ])
+            ]),
             _vm._v(" "),
-            _c("img", {
-              staticClass: "img-fluid",
-              staticStyle: { height: "5em", padding: "8px 4px" },
-              attrs: { src: "/img/profile/esa-logo.png" }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "d-flex flex-column header-data" }, [
-              _c("div", [_vm._v("Universidad Galileo")]),
+            _c("div", { staticClass: "col-12 col-md-7" }, [
+              _c("div", { staticStyle: { with: "3em" } }),
               _vm._v(" "),
-              _c("div", [_vm._v("Microfonia")]),
-              _vm._v(" "),
-              _c("div", [_vm._v("Oscar Palencia - 08002504")])
+              _c("div", { staticClass: "d-flex flex-column ml-4" }, [
+                _c("h1", { staticStyle: { "line-height": "1.75" } }, [
+                  _vm._v("Album de Micrófonos")
+                ])
+              ])
             ])
           ])
         ])
@@ -39230,7 +39295,7 @@ var render = function() {
           _c("div", { staticClass: "row" }, [
             _c(
               "div",
-              { staticClass: "col-12 col-md-7 mb-4" },
+              { staticClass: "col-12 col-md-4 mb-4" },
               [
                 _c("card", { staticClass: "shadow" }, [
                   _c("div", {
@@ -39245,7 +39310,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "col-12 col-md-5" },
+              { staticClass: "col-12 col-md-4" },
               [
                 _c("h2", [_vm._v(_vm._s(_vm.microphone.model))]),
                 _vm._v(" "),
@@ -39289,8 +39354,15 @@ var render = function() {
                       0
                     )
                   ]
-                ),
-                _vm._v(" "),
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-12 col-md-4" },
+              [
                 _c(
                   "data-pair",
                   { staticClass: "mb-2", attrs: { label: "Patron(es)" } },
@@ -39320,10 +39392,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "data-pair",
-                  {
-                    staticClass: "mb-2 text-right",
-                    attrs: { label: "Precio" }
-                  },
+                  { staticClass: "mb-2", attrs: { label: "Precio" } },
                   [
                     _c("h3", [
                       _vm._v(
@@ -39389,22 +39458,18 @@ var render = function() {
     : _c("div", [
         _c("div", { staticClass: "container-fluid" }, [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-12 mb-5" }, [
-              _c("h1", [_vm._v("Album de Micrófonos")])
-            ]),
-            _vm._v(" "),
             _c(
               "div",
-              { staticClass: "col-12 col-lg-3" },
+              { staticClass: "col-12" },
               [
                 _c("card", { staticClass: "mb-5" }, [
-                  _c("h5", [_vm._v("Filtros:")]),
-                  _vm._v(" "),
                   _c("div", { staticClass: "row" }, [
                     _c(
                       "div",
-                      { staticClass: "col-12 col-md-6 col-lg-12 mb-3" },
+                      { staticClass: "col-12 col-md-4" },
                       [
+                        _c("h5", [_vm._v("Filtros:")]),
+                        _vm._v(" "),
                         _c("label", { attrs: { for: "brand_filter" } }, [
                           _vm._v("Marca:")
                         ]),
@@ -39425,15 +39490,8 @@ var render = function() {
                             },
                             expression: "brand"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-12 col-md-6 col-lg-12  mb-3" },
-                      [
+                        }),
+                        _vm._v(" "),
                         _c("label", { attrs: { for: "type_filter" } }, [
                           _vm._v("Tipos:")
                         ]),
@@ -39454,15 +39512,8 @@ var render = function() {
                             },
                             expression: "type"
                           }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-12 col-md-6 col-lg-12  mb-3" },
-                      [
+                        }),
+                        _vm._v(" "),
                         _c("label", { attrs: { for: "pattern_filter" } }, [
                           _vm._v("Patrones:")
                         ]),
@@ -39486,52 +39537,82 @@ var render = function() {
                         })
                       ],
                       1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-12 col-md-8" },
+                      [
+                        _c("h5", { staticClass: "mt-4" }, [
+                          _vm._v("Resultados:")
+                        ]),
+                        _vm._v(" "),
+                        _vm.filteredMicrophones.length === 0
+                          ? _c("alert", {
+                              attrs: { title: "No se encontraron resultados" }
+                            })
+                          : _c(
+                              "div",
+                              {
+                                staticStyle: {
+                                  "max-height": "12em",
+                                  "overflow-y": "auto"
+                                }
+                              },
+                              [
+                                _c(
+                                  "table",
+                                  {
+                                    staticClass: "table table-hover",
+                                    staticStyle: { "max-height": "10em" }
+                                  },
+                                  [
+                                    _c(
+                                      "tbody",
+                                      {
+                                        staticStyle: {
+                                          "max-height": "10em",
+                                          "overflow-y": "auto"
+                                        }
+                                      },
+                                      _vm._l(_vm.filteredMicrophones, function(
+                                        mic,
+                                        index
+                                      ) {
+                                        return _c(
+                                          "tr",
+                                          { key: "results_" + mic.id },
+                                          [
+                                            _c("td", {
+                                              domProps: {
+                                                innerHTML: _vm._s(index + 1)
+                                              }
+                                            }),
+                                            _vm._v(" "),
+                                            _c("td", {
+                                              domProps: {
+                                                innerHTML: _vm._s(mic.model)
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.selectMicrophone(
+                                                    mic
+                                                  )
+                                                }
+                                              }
+                                            })
+                                          ]
+                                        )
+                                      }),
+                                      0
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                      ],
+                      1
                     )
-                  ]),
-                  _vm._v(" "),
-                  _c("h5", { staticClass: "mt-4" }, [_vm._v("Resultados:")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-12" }, [
-                      _c(
-                        "table",
-                        {
-                          staticClass: "table table-hover",
-                          staticStyle: { "max-height": "10em" }
-                        },
-                        [
-                          _c(
-                            "tbody",
-                            {
-                              staticStyle: {
-                                "max-height": "10em",
-                                "overflow-y": "auto"
-                              }
-                            },
-                            _vm._l(_vm.filteredMicrophones, function(
-                              mic,
-                              index
-                            ) {
-                              return _c("tr", { key: "results_" + mic.id }, [
-                                _c("td", {
-                                  domProps: { innerHTML: _vm._s(index + 1) }
-                                }),
-                                _vm._v(" "),
-                                _c("td", {
-                                  domProps: { innerHTML: _vm._s(mic.model) },
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.selectMicrophone(mic)
-                                    }
-                                  }
-                                })
-                              ])
-                            }),
-                            0
-                          )
-                        ]
-                      )
-                    ])
                   ])
                 ])
               ],
@@ -39540,9 +39621,9 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "col-12 col-lg-9" },
+              { staticClass: "col-12" },
               [
-                !_vm.microphone
+                !_vm.microphone && _vm.filteredMicrophones.length > 0
                   ? _c(
                       "alert",
                       { attrs: { title: "Seleccione un Micrófono" } },
@@ -39552,9 +39633,11 @@ var render = function() {
                         )
                       ]
                     )
-                  : _c("microphone-display", {
+                  : _vm.microphone
+                  ? _c("microphone-display", {
                       attrs: { microphone: _vm.microphone }
                     })
+                  : _vm._e()
               ],
               1
             )

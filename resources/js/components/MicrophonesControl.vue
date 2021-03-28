@@ -9,14 +9,11 @@
         <div class="container-fluid">
 
             <div class="row">
-                <div class="col-12 mb-5">
-                    <h1>Album de Micrófonos</h1>
-                </div>
-                <div class="col-12 col-lg-3">
+                <div class="col-12">
                     <card class="mb-5">
-                        <h5>Filtros:</h5>
                         <div class="row">
-                            <div class="col-12 col-md-6 col-lg-12 mb-3">
+                            <div class="col-12 col-md-4">
+                                <h5>Filtros:</h5>
                                 <label for="brand_filter">Marca:</label>
                                 <v-select id="brand_filter"
                                           v-model="brand"
@@ -24,8 +21,6 @@
                                           :getOptionLabel="option => option.brand"
                                           placeholder="Seleccione una Marca"
                                 ></v-select>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-12  mb-3">
                                 <label for="type_filter">Tipos:</label>
                                 <v-select id="type_filter"
                                           v-model="type"
@@ -33,8 +28,6 @@
                                           :getOptionLabel="option => option.type"
                                           placeholder="Seleccione un Tipo"
                                 ></v-select>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-12  mb-3">
                                 <label for="pattern_filter">Patrones:</label>
                                 <v-select id="pattern_filter"
                                           v-model="pattern"
@@ -42,32 +35,35 @@
                                           :getOptionLabel="option => option.pattern"
                                           placeholder="Seleccione un Patrón"
                                 ></v-select>
+
                             </div>
-                        </div>
-                        <h5 class="mt-4">Resultados:</h5>
-                        <div class="row">
-                            <div class="col-12">
-                                <table class="table table-hover" style="max-height: 10em;">
-                                    <tbody style="max-height: 10em; overflow-y: auto;">
-                                    <tr v-for="(mic, index) in filteredMicrophones"
-                                        :key="`results_${mic.id}`">
-                                        <td v-html="index + 1"></td>
-                                        <td v-html="mic.model"
-                                            @click="selectMicrophone(mic)">
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                            <div class="col-12 col-md-8">
+                                <h5 class="mt-4">Resultados:</h5>
+                                <alert v-if="filteredMicrophones.length === 0" title="No se encontraron resultados">
+                                </alert>
+                                <div v-else style="max-height: 12em; overflow-y: auto">
+                                    <table class="table table-hover" style="max-height: 10em;">
+                                        <tbody style="max-height: 10em; overflow-y: auto;">
+                                        <tr v-for="(mic, index) in filteredMicrophones"
+                                            :key="`results_${mic.id}`">
+                                            <td v-html="index + 1"></td>
+                                            <td v-html="mic.model"
+                                                @click="selectMicrophone(mic)">
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </card>
 
                 </div>
-                <div class="col-12 col-lg-9">
-                    <alert v-if="!microphone" title="Seleccione un Micrófono">
+                <div class="col-12">
+                    <alert v-if="!microphone && filteredMicrophones.length > 0" title="Seleccione un Micrófono">
                         Seleccione un Micrófono de entre la lista en la izquierda para comenzar
                     </alert>
-                    <microphone-display v-else :microphone="microphone"></microphone-display>
+                    <microphone-display v-else-if="microphone" :microphone="microphone"></microphone-display>
                 </div>
             </div>
         </div>
@@ -124,9 +120,16 @@ export default {
                 );
             }
 
-            if (microphones.length === 0) {
-                this.microphone = null;
+            if (this.microphone) {
+                if (microphones.length === 0) {
+                    this.microphone = null;
+                }
+
+                if (microphones.filter((m) => m.id === this.microphone.id).length === 0) {
+                    this.microphone = null;
+                }
             }
+
 
             return microphones;
         }
