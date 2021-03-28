@@ -54,6 +54,12 @@ class BrandsSeeder extends Seeder
             [
                 'brand' => 'Manley',
             ],
+            [
+                'brand' => 'Aston Microphones',
+            ],
+            [
+                'brand' => 'Earthworks',
+            ],
         ]);
     }
 }

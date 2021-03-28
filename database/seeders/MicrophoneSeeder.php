@@ -703,5 +703,229 @@ class MicrophoneSeeder extends Seeder
         ]);
         $microphone->save();
 
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::NEUMANN);
+        $microphone->model = "Neumann KM 184";
+        $microphone->price = 1500;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::CONDENSADOR);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "PERCUSIONES"
+            ],
+            [
+                "usage" => "METALES"
+            ],
+            [
+                "usage" => "ORQUESTAL"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::SAMSON);
+        $microphone->model = "Samson C02";
+        $microphone->price = 129;
+        $microphone->frequency_response = "50Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::CONDENSADOR);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "PERCUSIONES"
+            ],
+            [
+                "usage" => "ACUSTICOS"
+            ],
+            [
+                "usage" => "VOCES DISCRETAS"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::BEHRINGER);
+        $microphone->model = "Behringer C-2";
+        $microphone->price = 49;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::CONDENSADOR);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "OVERHEADS"
+            ],
+            [
+                "usage" => "PERCUSIONES"
+            ],
+            [
+                "usage" => "ORQUESTAL"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::SHURE);
+        $microphone->model = "Shure KSM137";
+        $microphone->price = 665;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::CONDENSADOR);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "GUITARRA ACUSTICA"
+            ],
+            [
+                "usage" => "OVERHEADS"
+            ],
+            [
+                "usage" => "PERCUSIONES"
+            ],
+            [
+                "usage" => "ORQUESTAL"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::SHURE);
+        $microphone->model = "Shure SM81";
+        $microphone->price = 349;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::CONDENSADOR);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "GUITARRA ACUSTICA"
+            ],
+            [
+                "usage" => "PERCUSIONES"
+            ],
+            [
+                "usage" => "OVERHEAD"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::BLUE);
+        $microphone->model = "Blue Ember";
+        $microphone->price = 99;
+        $microphone->frequency_response = "40Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::CONDENSADOR);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "GUITARRA ACUSTICA"
+            ],
+            [
+                "usage" => "STAGE"
+            ],
+            [
+                "usage" => "AMPLIFICADORES"
+            ],
+            [
+                "usage" => "VOCALS"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::SHURE);
+        $microphone->model = "Shure SM137";
+        $microphone->price = 179;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::CONDENSADOR);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "GUITARRA ACUSTICA"
+            ],
+            [
+                "usage" => "OVERHEADS"
+            ],
+            [
+                "usage" => "PERCUSIONES"
+            ],
+            [
+                "usage" => "ORQUESTAL"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::WARM_AUDIO);
+        $microphone->model = "Warm Audio WA-84";
+        $microphone->price = 399;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::CONDENSADOR);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE, PolarPattern::OMNIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "GUITARRA ACUSTICA"
+            ],
+            [
+                "usage" => "OVERHEADS"
+            ],
+            [
+                "usage" => "PERCUSIONES"
+            ],
+            [
+                "usage" => "ORQUESTAL"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::EARTHWORKS);
+        $microphone->model = "Earthworks SR314";
+        $microphone->price = 699;
+        $microphone->frequency_response = "20Hz-30kHz";
+        $microphone->type()->associate(MicrophoneType::CONDENSADOR);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "STAGE VOCALS"
+            ],
+            [
+                "usage" => "STUDIO VOCALS"
+            ],
+            [
+                "usage" => "MINIMAL PROXIMITY EFFECT"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::EARTHWORKS);
+        $microphone->model = "Earthworks QTC40mp";
+        $microphone->price = 1998;
+        $microphone->frequency_response = "3Hz-40kHz";
+        $microphone->type()->associate(MicrophoneType::CONDENSADOR);
+        $microphone->patterns()->sync([PolarPattern::OMNIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "TRANSPARENTE"
+            ],
+            [
+                "usage" => "PERCUSIONES"
+            ],
+            [
+                "usage" => "ORQUESTAL"
+            ],
+            [
+                "usage" => "SUPER SENSIBILIDAD"
+            ],
+        ]);
+        $microphone->save();
     }
 }
