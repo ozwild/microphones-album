@@ -90,6 +90,9 @@ class BrandsSeeder extends Seeder
             [
                 'brand' => 'Acacia',
             ],
+            [
+                'brand' => 'Countryman',
+            ],
         ]);
     }
 }

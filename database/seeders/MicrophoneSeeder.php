@@ -1419,6 +1419,222 @@ class MicrophoneSeeder extends Seeder
         $microphone->save();
 
 
+        // LAVALIER
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::RODE);
+        $microphone->model = "Rode Lavalier GO";
+        $microphone->price = 79;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::LAVALIER);
+        $microphone->patterns()->sync([PolarPattern::OMNIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "KEVLAR-REINFORCED"
+            ],
+            [
+                "usage" => "HEAVY-DUTY"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::SHURE);
+        $microphone->model = "Shure WL185";
+        $microphone->price = 108;
+        $microphone->frequency_response = "50Hz-17kHz";
+        $microphone->type()->associate(MicrophoneType::LAVALIER);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "WIRELESS"
+            ],
+            [
+                "usage" => "NOISE REDUCTION"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::SENNHEISER);
+        $microphone->model = "Sennheiser ME 2-II";
+        $microphone->price = 129.95;
+        $microphone->frequency_response = "50Hz-18kHz";
+        $microphone->type()->associate(MicrophoneType::LAVALIER);
+        $microphone->patterns()->sync([PolarPattern::OMNIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "WIRELESS"
+            ],
+            [
+                "usage" => "DISCRETO"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::SHURE);
+        $microphone->model = "Shure WL93";
+        $microphone->price = 78;
+        $microphone->frequency_response = "50Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::LAVALIER);
+        $microphone->patterns()->sync([PolarPattern::OMNIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "WIRELESS"
+            ],
+            [
+                "usage" => "STANDARD"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::AUDIO_TECHNICA);
+        $microphone->model = "Audio-Technica Pro 70";
+        $microphone->price = 139;
+        $microphone->frequency_response = "100Hz-14kHz";
+        $microphone->type()->associate(MicrophoneType::LAVALIER);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "VOCALS"
+            ],
+            [
+                "usage" => "GUITARRA ACUSTICA"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::SHURE);
+        $microphone->model = "Shure CVL-TQG";
+        $microphone->price = 39;
+        $microphone->frequency_response = "50Hz-14kHz";
+        $microphone->type()->associate(MicrophoneType::LAVALIER);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "NOISE REDUCTION"
+            ],
+            [
+                "usage" => "STANDARD"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::COUNTRYMAN);
+        $microphone->model = "Countryman B3";
+        $microphone->price = 189;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::LAVALIER);
+        $microphone->patterns()->sync([PolarPattern::OMNIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "SENNHEISSER COMPATIBLE"
+            ],
+            [
+                "usage" => "HIGH QUALITY"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::ACACIA);
+        $microphone->model = "Acacia LIZ Platinum";
+        $microphone->price = 229.99;
+        $microphone->frequency_response = "50Hz-18kHz";
+        $microphone->type()->associate(MicrophoneType::LAVALIER);
+        $microphone->patterns()->sync([PolarPattern::OMNIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "CONFERENCIAS"
+            ],
+            [
+                "usage" => "XLR"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::DPA);
+        $microphone->model = "DPA 6060 CORE";
+        $microphone->price = 549.95;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::LAVALIER);
+        $microphone->patterns()->sync([PolarPattern::OMNIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "SUPER CLARO"
+            ],
+            [
+                "usage" => "DE ACERO"
+            ],
+            [
+                "usage" => "REPELENTE DE AGUA"
+            ],
+            [
+                "usage" => "ADAPTADORES"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::DPA);
+        $microphone->model = "DPA 4060 Mini";
+        $microphone->price = 429.95;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::LAVALIER);
+        $microphone->patterns()->sync([PolarPattern::OMNIDIRECCIONAL]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "RESISTENTE A HUMEDAD"
+            ],
+            [
+                "usage" => "ADAPTADORES"
+            ],
+        ]);
+        $microphone->save();
 
     }
 }

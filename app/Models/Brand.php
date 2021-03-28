@@ -35,6 +35,7 @@ class Brand extends Model
     const DPA = 23;
     const SARAMONIC = 24;
     const ACACIA = 25;
+    const COUNTRYMAN = 26;
 
     public $timestamps = FALSE;
 
