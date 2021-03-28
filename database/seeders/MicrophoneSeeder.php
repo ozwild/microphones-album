@@ -1021,7 +1021,6 @@ class MicrophoneSeeder extends Seeder
         $microphone->save();
 
 
-
         $microphone = Microphone::create();
         $microphone->brand()->associate(Brand::SHURE);
         $microphone->model = "Shure KSM313/NE";
@@ -1062,7 +1061,6 @@ class MicrophoneSeeder extends Seeder
             ],
         ]);
         $microphone->save();
-
 
 
         $microphone = Microphone::create();
@@ -1107,8 +1105,6 @@ class MicrophoneSeeder extends Seeder
         $microphone->save();
 
 
-
-
         $microphone = Microphone::create();
         $microphone->brand()->associate(Brand::ROYER);
         $microphone->model = "Royer R-122V";
@@ -1130,7 +1126,6 @@ class MicrophoneSeeder extends Seeder
         $microphone->save();
 
 
-
         $microphone = Microphone::create();
         $microphone->brand()->associate(Brand::GOLDEN_AGE);
         $microphone->model = "Golden Age Project R1 ST";
@@ -1150,6 +1145,279 @@ class MicrophoneSeeder extends Seeder
             ],
         ]);
         $microphone->save();
+
+
+        // SHOTGUN
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::SENNHEISER);
+        $microphone->model = "Sennheiser MKH 416";
+        $microphone->price = 999;
+        $microphone->frequency_response = "40Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::SHOTGUN);
+        $microphone->patterns()->sync([PolarPattern::SUPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "LOCATION SHOOTING"
+            ],
+            [
+                "usage" => "DIRECTIVIDAD"
+            ],
+            [
+                "usage" => "LOW NOISE"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::RODE);
+        $microphone->model = "Rode VideoMic NTG ";
+        $microphone->price = 249;
+        $microphone->frequency_response = "40Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::SHOTGUN);
+        $microphone->patterns()->sync([PolarPattern::SUPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DOCUMENTAL"
+            ],
+            [
+                "usage" => "LIVESTREAMS"
+            ],
+            [
+                "usage" => "MONTADO"
+            ],
+            [
+                "usage" => "USB"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::RODE);
+        $microphone->model = "Rode VideoMic NTG ";
+        $microphone->price = 249;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::SHOTGUN);
+        $microphone->patterns()->sync([PolarPattern::SUPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DOCUMENTAL"
+            ],
+            [
+                "usage" => "LIVESTREAMS"
+            ],
+            [
+                "usage" => "MONTADO"
+            ],
+            [
+                "usage" => "USB"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::AUDIO_TECHNICA);
+        $microphone->model = "Audio-Technica AT8035";
+        $microphone->price = 269;
+        $microphone->frequency_response = "40Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::SHOTGUN);
+        $microphone->patterns()->sync([PolarPattern::SUPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "DIRECCIONAL"
+            ],
+            [
+                "usage" => "OUTDOOR"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::SCHOEPS);
+        $microphone->model = "Schoeps CMIT 5 U";
+        $microphone->price = 2299;
+        $microphone->frequency_response = "40Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::SHOTGUN);
+        $microphone->patterns()->sync([PolarPattern::SUPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "MUSICA"
+            ],
+            [
+                "usage" => "DIALOGO"
+            ],
+            [
+                "usage" => "ROLL-OFF SWITCH"
+            ],
+            [
+                "usage" => "LOW-CUT FILTER"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::DPA);
+        $microphone->model = "DPA 4097 CORE";
+        $microphone->price = 585;
+        $microphone->frequency_response = "80Hz-15kHz";
+        $microphone->type()->associate(MicrophoneType::SHOTGUN);
+        $microphone->patterns()->sync([PolarPattern::SUPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "MINIATURA"
+            ],
+            [
+                "usage" => "ENTREVISTAS"
+            ],
+            [
+                "usage" => "USO EN SETS"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::SARAMONIC);
+        $microphone->model = "Saramonic Vmic Mini";
+        $microphone->price = 59;
+        $microphone->frequency_response = "75Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::SHOTGUN);
+        $microphone->patterns()->sync([PolarPattern::CARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "MINIATURA"
+            ],
+            [
+                "usage" => "MONTADO"
+            ],
+            [
+                "usage" => "EN MOVILES"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::RODE);
+        $microphone->model = "Rode VideoMic Pro+";
+        $microphone->price = 299;
+        $microphone->frequency_response = "20Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::SHOTGUN);
+        $microphone->patterns()->sync([PolarPattern::SUPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "MONTADO"
+            ],
+            [
+                "usage" => "CLIPPING-SAFE"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::RODE);
+        $microphone->model = "Rode NTG-8";
+        $microphone->price = 999;
+        $microphone->frequency_response = "40Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::SHOTGUN);
+        $microphone->patterns()->sync([PolarPattern::SUPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "ALTA SENSIBILIDAD"
+            ],
+            [
+                "usage" => "DIRECCIONAL"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::ACACIA);
+        $microphone->model = "Acacia LIZ";
+        $microphone->price = 219.99;
+        $microphone->frequency_response = "40Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::SHOTGUN);
+        $microphone->patterns()->sync([PolarPattern::SUPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "FILM - RADIO - TV"
+            ],
+            [
+                "usage" => "DIRECCIONAL"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::ACACIA);
+        $microphone->model = "Acacia LIZ";
+        $microphone->price = 219.99;
+        $microphone->frequency_response = "30Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::SHOTGUN);
+        $microphone->patterns()->sync([PolarPattern::SUPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "FILM - RADIO - TV"
+            ],
+            [
+                "usage" => "DIRECCIONAL"
+            ],
+        ]);
+        $microphone->save();
+
+
+        $microphone = Microphone::create();
+        $microphone->brand()->associate(Brand::RODE);
+        $microphone->model = "Rode NTG-3";
+        $microphone->price = 699;
+        $microphone->frequency_response = "40Hz-20kHz";
+        $microphone->type()->associate(MicrophoneType::SHOTGUN);
+        $microphone->patterns()->sync([PolarPattern::SUPERCARDIOIDE]);
+        $microphone->uses()->createMany([
+            [
+                "usage" => "DE CONDENSADOR"
+            ],
+            [
+                "usage" => "EXTERIOR"
+            ],
+            [
+                "usage" => "HEAVY-DUTY"
+            ],
+        ]);
+        $microphone->save();
+
 
 
     }

@@ -75,6 +75,21 @@ class BrandsSeeder extends Seeder
             [
                 'brand' => 'Cloud',
             ],
+            [
+                'brand' => 'Audio-Technica',
+            ],
+            [
+                'brand' => 'Schoeps',
+            ],
+            [
+                'brand' => 'DPA',
+            ],
+            [
+                'brand' => 'Saramonic',
+            ],
+            [
+                'brand' => 'Acacia',
+            ],
         ]);
     }
 }

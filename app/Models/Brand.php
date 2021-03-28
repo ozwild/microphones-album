@@ -30,6 +30,11 @@ class Brand extends Model
     const AEA = 18;
     const GOLDEN_AGE = 19;
     const CLOUD = 20;
+    const AUDIO_TECHNICA = 21;
+    const SCHOEPS = 22;
+    const DPA = 23;
+    const SARAMONIC = 24;
+    const ACACIA = 25;
 
     public $timestamps = FALSE;
 
